@@ -1,0 +1,39 @@
+
+factorial:     file format elf32-littleriscv
+
+
+Disassembly of section .text:
+
+00000000 <factorial>:
+   0:	fe010113          	addi	sp,sp,-32
+   4:	00112e23          	sw	ra,28(sp)
+   8:	00812c23          	sw	s0,24(sp)
+   c:	02010413          	addi	s0,sp,32
+  10:	fea42623          	sw	a0,-20(s0)
+  14:	fec42783          	lw	a5,-20(s0)
+  18:	00079663          	bnez	a5,24 <factorial+0x24>
+  1c:	00100793          	li	a5,1
+  20:	0200006f          	j	40 <factorial+0x40>
+  24:	fec42783          	lw	a5,-20(s0)
+  28:	fff78793          	addi	a5,a5,-1
+  2c:	00078513          	mv	a0,a5
+  30:	fd1ff0ef          	jal	ra,0 <factorial>
+  34:	00050713          	mv	a4,a0
+  38:	fec42783          	lw	a5,-20(s0)
+  3c:	02f707b3          	mul	a5,a4,a5
+  40:	00078513          	mv	a0,a5
+  44:	01c12083          	lw	ra,28(sp)
+  48:	01812403          	lw	s0,24(sp)
+  4c:	02010113          	addi	sp,sp,32
+  50:	00008067          	ret
+
+00000054 <main>:
+  54:	ff010113          	addi	sp,sp,-16
+  58:	00112623          	sw	ra,12(sp)
+  5c:	00812423          	sw	s0,8(sp)
+  60:	01010413          	addi	s0,sp,16
+  64:	000017b7          	lui	a5,0x1
+  68:	0787a783          	lw	a5,120(a5) # 1078 <val>
+  6c:	00078513          	mv	a0,a5
+  70:	f91ff0ef          	jal	ra,0 <factorial>
+  74:	0000006f          	j	74 <main+0x20>
