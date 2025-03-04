@@ -60,6 +60,13 @@ class j_instruction : public instruction {
     // ...
 };
 
+template <typename T, unsigned B>
+inline T sign_extend(const T x)
+{
+	  struct { T x:B; } s;
+	    return s.x = x;
+}
+
 template<uint8_t funct3>
 void execute_load(mem::memory& mem, processor& proc,
     mem::address_t addr, uint8_t rd);
@@ -69,5 +76,8 @@ void execute_store(mem::memory& mem, processor& proc,
     mem::address_t addr, uint8_t rs2);
 
 using instr_emulation = std::function<uint32_t(mem::memory& mem, processor& proc, uint32_t)>;
+
+uint32_t load(mem::memory& mem, processor& proc, uint32_t bitstream);
+uint32_t store(mem::memory& mem, processor& proc, uint32_t bitstream);
 
 } // namespace instrs

@@ -30,7 +30,8 @@ template<>
 void instrs::execute_load<0b000>(mem::memory& mem, processor & proc,
     mem::address_t addr, uint8_t rd)
 {
-  uint32_t val = sign_extend<uint32_t, sizeof(uint8_t)*8>(mem.read<uint8_t>(addr));
+  uint32_t val = static_cast<uint32_t>(sign_extend<int32_t, 
+		  sizeof(uint8_t)*8>(mem.read<uint8_t>(addr)));
   proc.write_reg(rd, val);
 }
 
@@ -41,8 +42,8 @@ void instrs::execute_load<0b001>(mem::memory& mem, processor & proc,
 {
   assert((addr & 0b1) == 0); // ensure alignment
   // perform sign extension
-  uint32_t val = sign_extend<uint32_t,
-           sizeof(uint16_t)*8>(mem.read<uint16_t>(addr));
+  uint32_t val = static_cast<uint32_t>(sign_extend<int32_t,
+           sizeof(uint16_t)*8>(mem.read<uint16_t>(addr)));
   proc.write_reg(rd, val);
 }
 
