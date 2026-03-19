@@ -21,11 +21,7 @@ Disassembly of section .text:
   34:	fea42623          	sw	a0,-20(s0)
   38:	fec42583          	lw	a1,-20(s0)
   3c:	fdc42503          	lw	a0,-36(s0)
-<<<<<<< HEAD
-  40:	040000ef          	jal	80 <soft_mul>
-=======
   40:	044000ef          	jal	84 <soft_mul>
->>>>>>> Updated examples
   44:	00050793          	mv	a5,a0
   48:	00078513          	mv	a0,a5
   4c:	02c12083          	lw	ra,44(sp)
@@ -34,71 +30,6 @@ Disassembly of section .text:
   58:	00008067          	ret
 
 0000005c <main>:
-<<<<<<< HEAD
-  5c:	ff010113          	addi	sp,sp,-16
-  60:	00112623          	sw	ra,12(sp)
-  64:	00812423          	sw	s0,8(sp)
-  68:	01010413          	addi	s0,sp,16
-  6c:	000017b7          	lui	a5,0x1
-  70:	1507a783          	lw	a5,336(a5) # 1150 <val>
-  74:	00078513          	mv	a0,a5
-  78:	f89ff0ef          	jal	0 <factorial>
-  7c:	0000006f          	j	7c <main+0x20>
-
-00000080 <soft_mul>:
-  80:	fd010113          	addi	sp,sp,-48
-  84:	02112623          	sw	ra,44(sp)
-  88:	02812423          	sw	s0,40(sp)
-  8c:	03010413          	addi	s0,sp,48
-  90:	fca42e23          	sw	a0,-36(s0)
-  94:	fcb42c23          	sw	a1,-40(s0)
-  98:	fe042623          	sw	zero,-20(s0)
-  9c:	00100793          	li	a5,1
-  a0:	fef42423          	sw	a5,-24(s0)
-  a4:	fdc42783          	lw	a5,-36(s0)
-  a8:	0007de63          	bgez	a5,c4 <soft_mul+0x44>
-  ac:	fdc42783          	lw	a5,-36(s0)
-  b0:	40f007b3          	neg	a5,a5
-  b4:	fcf42e23          	sw	a5,-36(s0)
-  b8:	fe842783          	lw	a5,-24(s0)
-  bc:	40f007b3          	neg	a5,a5
-  c0:	fef42423          	sw	a5,-24(s0)
-  c4:	fd842783          	lw	a5,-40(s0)
-  c8:	0407da63          	bgez	a5,11c <soft_mul+0x9c>
-  cc:	fd842783          	lw	a5,-40(s0)
-  d0:	40f007b3          	neg	a5,a5
-  d4:	fcf42c23          	sw	a5,-40(s0)
-  d8:	fe842783          	lw	a5,-24(s0)
-  dc:	40f007b3          	neg	a5,a5
-  e0:	fef42423          	sw	a5,-24(s0)
-  e4:	0380006f          	j	11c <soft_mul+0x9c>
-  e8:	fd842783          	lw	a5,-40(s0)
-  ec:	0017f793          	andi	a5,a5,1
-  f0:	00078a63          	beqz	a5,104 <soft_mul+0x84>
-  f4:	fec42703          	lw	a4,-20(s0)
-  f8:	fdc42783          	lw	a5,-36(s0)
-  fc:	00f707b3          	add	a5,a4,a5
- 100:	fef42623          	sw	a5,-20(s0)
- 104:	fdc42783          	lw	a5,-36(s0)
- 108:	00179793          	slli	a5,a5,0x1
- 10c:	fcf42e23          	sw	a5,-36(s0)
- 110:	fd842783          	lw	a5,-40(s0)
- 114:	4017d793          	srai	a5,a5,0x1
- 118:	fcf42c23          	sw	a5,-40(s0)
- 11c:	fd842783          	lw	a5,-40(s0)
- 120:	fcf044e3          	bgtz	a5,e8 <soft_mul+0x68>
- 124:	fe842783          	lw	a5,-24(s0)
- 128:	0007d863          	bgez	a5,138 <soft_mul+0xb8>
- 12c:	fec42783          	lw	a5,-20(s0)
- 130:	40f007b3          	neg	a5,a5
- 134:	fef42623          	sw	a5,-20(s0)
- 138:	fec42783          	lw	a5,-20(s0)
- 13c:	00078513          	mv	a0,a5
- 140:	02c12083          	lw	ra,44(sp)
- 144:	02812403          	lw	s0,40(sp)
- 148:	03010113          	addi	sp,sp,48
- 14c:	00008067          	ret
-=======
   5c:	fe010113          	addi	sp,sp,-32
   60:	00112e23          	sw	ra,28(sp)
   64:	00812c23          	sw	s0,24(sp)
@@ -163,4 +94,3 @@ Disassembly of section .text:
  148:	02812403          	lw	s0,40(sp)
  14c:	03010113          	addi	sp,sp,48
  150:	00008067          	ret
->>>>>>> Updated examples
