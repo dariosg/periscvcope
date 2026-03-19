@@ -18,7 +18,7 @@ volatile int32_t val = 5;
 int main()
 {
 
-  factorial(val);
+  int res=factorial(val);
   while(1);
 
   return 0;

@@ -36,8 +36,6 @@ int32_t MatrixC[SZ][SZ];
 int main() {
   mat_mul_4x4(MatrixA, MatrixB, MatrixC);
 
-  while(1) {
-    asm volatile("nop"); 
-  }
+  while(1);
   return 0;
 }

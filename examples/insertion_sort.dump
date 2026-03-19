@@ -74,7 +74,13 @@ Disassembly of section .text:
  100:	01010413          	addi	s0,sp,16
  104:	00a00593          	li	a1,10
  108:	000017b7          	lui	a5,0x1
+<<<<<<< HEAD
  10c:	11c78513          	addi	a0,a5,284 # 111c <data.0>
  110:	ef1ff0ef          	jal	0 <insertion_sort>
  114:	00000013          	nop
  118:	ffdff06f          	j	114 <main+0x20>
+=======
+ 10c:	11878513          	addi	a0,a5,280 # 1118 <data.0>
+ 110:	ef1ff0ef          	jal	0 <insertion_sort>
+ 114:	0000006f          	j	114 <main+0x20>
+>>>>>>> Updated examples

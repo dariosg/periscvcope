@@ -37,7 +37,11 @@ Disassembly of section .text:
   74:	0007a783          	lw	a5,0(a5)
   78:	00078593          	mv	a1,a5
   7c:	00068513          	mv	a0,a3
+<<<<<<< HEAD
   80:	0cc000ef          	jal	14c <soft_mul>
+=======
+  80:	0c8000ef          	jal	148 <soft_mul>
+>>>>>>> Updated examples
   84:	fca42e23          	sw	a0,-36(s0)
   88:	fe442703          	lw	a4,-28(s0)
   8c:	fdc42783          	lw	a5,-36(s0)
@@ -82,6 +86,7 @@ Disassembly of section .text:
  120:	00112623          	sw	ra,12(sp)
  124:	00812423          	sw	s0,8(sp)
  128:	01010413          	addi	s0,sp,16
+<<<<<<< HEAD
  12c:	88018613          	addi	a2,gp,-1920 # 129c <MatrixC>
  130:	000017b7          	lui	a5,0x1
  134:	25c78593          	addi	a1,a5,604 # 125c <MatrixB>
@@ -144,3 +149,66 @@ Disassembly of section .text:
  210:	02812403          	lw	s0,40(sp)
  214:	03010113          	addi	sp,sp,48
  218:	00008067          	ret
+=======
+ 12c:	88018613          	addi	a2,gp,-1920 # 1298 <MatrixC>
+ 130:	000017b7          	lui	a5,0x1
+ 134:	25878593          	addi	a1,a5,600 # 1258 <MatrixB>
+ 138:	000017b7          	lui	a5,0x1
+ 13c:	21878513          	addi	a0,a5,536 # 1218 <MatrixA>
+ 140:	ec1ff0ef          	jal	0 <mat_mul_4x4>
+ 144:	0000006f          	j	144 <main+0x28>
+
+00000148 <soft_mul>:
+ 148:	fd010113          	addi	sp,sp,-48
+ 14c:	02112623          	sw	ra,44(sp)
+ 150:	02812423          	sw	s0,40(sp)
+ 154:	03010413          	addi	s0,sp,48
+ 158:	fca42e23          	sw	a0,-36(s0)
+ 15c:	fcb42c23          	sw	a1,-40(s0)
+ 160:	fe042623          	sw	zero,-20(s0)
+ 164:	00100793          	li	a5,1
+ 168:	fef42423          	sw	a5,-24(s0)
+ 16c:	fdc42783          	lw	a5,-36(s0)
+ 170:	0007de63          	bgez	a5,18c <soft_mul+0x44>
+ 174:	fdc42783          	lw	a5,-36(s0)
+ 178:	40f007b3          	neg	a5,a5
+ 17c:	fcf42e23          	sw	a5,-36(s0)
+ 180:	fe842783          	lw	a5,-24(s0)
+ 184:	40f007b3          	neg	a5,a5
+ 188:	fef42423          	sw	a5,-24(s0)
+ 18c:	fd842783          	lw	a5,-40(s0)
+ 190:	0407da63          	bgez	a5,1e4 <soft_mul+0x9c>
+ 194:	fd842783          	lw	a5,-40(s0)
+ 198:	40f007b3          	neg	a5,a5
+ 19c:	fcf42c23          	sw	a5,-40(s0)
+ 1a0:	fe842783          	lw	a5,-24(s0)
+ 1a4:	40f007b3          	neg	a5,a5
+ 1a8:	fef42423          	sw	a5,-24(s0)
+ 1ac:	0380006f          	j	1e4 <soft_mul+0x9c>
+ 1b0:	fd842783          	lw	a5,-40(s0)
+ 1b4:	0017f793          	andi	a5,a5,1
+ 1b8:	00078a63          	beqz	a5,1cc <soft_mul+0x84>
+ 1bc:	fec42703          	lw	a4,-20(s0)
+ 1c0:	fdc42783          	lw	a5,-36(s0)
+ 1c4:	00f707b3          	add	a5,a4,a5
+ 1c8:	fef42623          	sw	a5,-20(s0)
+ 1cc:	fdc42783          	lw	a5,-36(s0)
+ 1d0:	00179793          	slli	a5,a5,0x1
+ 1d4:	fcf42e23          	sw	a5,-36(s0)
+ 1d8:	fd842783          	lw	a5,-40(s0)
+ 1dc:	4017d793          	srai	a5,a5,0x1
+ 1e0:	fcf42c23          	sw	a5,-40(s0)
+ 1e4:	fd842783          	lw	a5,-40(s0)
+ 1e8:	fcf044e3          	bgtz	a5,1b0 <soft_mul+0x68>
+ 1ec:	fe842783          	lw	a5,-24(s0)
+ 1f0:	0007d863          	bgez	a5,200 <soft_mul+0xb8>
+ 1f4:	fec42783          	lw	a5,-20(s0)
+ 1f8:	40f007b3          	neg	a5,a5
+ 1fc:	fef42623          	sw	a5,-20(s0)
+ 200:	fec42783          	lw	a5,-20(s0)
+ 204:	00078513          	mv	a0,a5
+ 208:	02c12083          	lw	ra,44(sp)
+ 20c:	02812403          	lw	s0,40(sp)
+ 210:	03010113          	addi	sp,sp,48
+ 214:	00008067          	ret
+>>>>>>> Updated examples

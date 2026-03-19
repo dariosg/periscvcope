@@ -30,9 +30,6 @@ int main(void)
 	};
 	insertion_sort(data, ARR_SIZE);
 
-	while (1) {
-		__asm("nop"); 
-	}
-
+	while (1);
 	return 0;
 }
